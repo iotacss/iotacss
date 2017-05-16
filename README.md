@@ -13,6 +13,7 @@ and import them as follows:
 ```scss
 @import 'node_modules/iotacss/settings/core';
 @import 'node_modules/iotacss/tools/core';
+
 ...
 ```
 
@@ -27,10 +28,12 @@ and import them as follows:
 ```scss
 @import 'node_modules/iotacss-settings-core/settings.core';
 @import 'node_modules/iotacss-tools-core/tools.core';
+
+...
 ```
 
 ## Documentation
 For more information about iotaCSS as well as the complete documentation of each module, use the official iotaCSS documentation -  [https://iotacss.com/docs](https://iotacss.com/docs).
 
 ## License
-Licensed under the Apache License, Version 2.0. Dimitris Psaropoulos.
+Licensed under the Apache License, Version 2.0. Copyright © 2016–2017. Dimitris Psaropoulos.
