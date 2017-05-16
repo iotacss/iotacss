@@ -1,0 +1,3 @@
+@function _iota-is-number($number) {
+  @return type-of($number) == 'number'
+}

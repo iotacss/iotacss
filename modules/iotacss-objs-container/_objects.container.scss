@@ -1,0 +1,60 @@
+// Container Object
+
+
+
+
+// Options
+
+$iota-objs-container: true;
+
+$iota-objs-container-namespace: 'container' !default;
+
+$iota-objs-container-gutter-default : $iota-global-gutter-default !default;
+$iota-objs-container-gutter-extra   : () !default;
+
+$iota-objs-container-size-default : 1000px !default;
+$iota-objs-container-size-extra   : () !default;
+
+
+
+
+$iota-objs-container-var     : $iota-global-objects-namespace + $iota-objs-container-namespace;
+$iota-objs-container-var-mod : $iota-objs-container-var + "--";
+
+
+
+
+.#{$iota-objs-container-var} {
+  margin-right: auto;
+  margin-left:  auto;
+  @include _iota-generate-unit('padding', 'right', $iota-objs-container-gutter-default);
+  @include _iota-generate-unit('padding', 'left', $iota-objs-container-gutter-default);
+  @include _iota-generate-unit('max', 'width', $iota-objs-container-size-default);
+}
+
+
+
+
+// Container Object Extra Gutters
+
+@each $gutter-name, $gutter-size in $iota-objs-container-gutter-extra {
+
+  .#{$iota-objs-container-var-mod + quote($gutter-name)} {
+    @include _iota-generate-unit('padding', 'right', $gutter-size);
+    @include _iota-generate-unit('padding', 'left', $gutter-size);
+  }
+
+}
+
+
+
+
+// Container Object Extra Sizes
+
+@each $size-name, $size-value in $iota-objs-container-size-extra {
+
+  .#{$iota-objs-container-var-mod + quote($size-name)} {
+    @include _iota-generate-unit('max-width', null, $size-value);
+  }
+
+}

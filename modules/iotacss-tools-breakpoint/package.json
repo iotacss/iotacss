@@ -1,0 +1,16 @@
+{
+  "name": "iotacss-tools-breakpoint",
+  "version": "1.0.1",
+  "description": "Breakpoint mixin for iotaCSS",
+  "main": "_tools.breakpoint.scss",
+  "repository": "https://github.com/iotacss/iotacss/tree/master/modules/iotacss-tools-breakpoint",
+  "license": "Apache-2.0",
+  "keywords": [
+    "iotacss",
+    "css",
+    "sass",
+    "bem",
+    "oocss"
+  ],
+  "author": "Dimitris Psaropoulos <info@harby.me>"
+}

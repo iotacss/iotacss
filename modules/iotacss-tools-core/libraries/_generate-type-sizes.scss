@@ -1,0 +1,32 @@
+@mixin _iota-generate-type-sizes($values, $breakpoints) {
+
+  @if type-of($values) == 'map' {
+
+    @if map-has-key($values, null) {
+
+      @include _iota-extract-type-sizes(map-get($values, null));
+
+    }
+  
+    @each $breakpoint, $sizes in $values {
+
+      @if map-has-key($breakpoints, $breakpoint) {
+      
+        @media #{map-get($breakpoints, $breakpoint)} {
+      
+          @include _iota-extract-type-sizes($sizes);
+
+        }
+
+      }
+
+    }
+
+  }
+
+  @if type-of($values) == 'number' or type-of($values) == 'list' {
+
+    @include _iota-extract-type-sizes($values);
+
+  }
+}

@@ -1,0 +1,69 @@
+//  Transform Utility
+
+
+
+
+// Options
+
+$iota-utils-transform                 : true;
+
+$iota-utils-transform-namespace       : '' !default;
+$iota-utils-transform-capitalize-name : 'capitalize' !default;
+$iota-utils-transform-uppercase-name  : 'uppercase' !default;
+$iota-utils-transform-lowercase-name  : 'lowercase' !default;
+
+$iota-utils-transform-res             : false !default;
+$iota-utils-transform-breakpoints     : $iota-global-breakpoints !default;
+
+
+
+
+// Helper local variables
+
+$iota-utils-transform-var-transform : $iota-global-utilities-namespace + $iota-utils-transform-namespace;
+
+
+
+
+// Transform Utilities
+
+.#{$iota-utils-transform-var-transform + $iota-utils-transform-capitalize-name} {
+  text-transform: capitalize !important;
+}
+
+.#{$iota-utils-transform-var-transform + $iota-utils-transform-uppercase-name} {
+  text-transform: uppercase !important;
+}
+
+.#{$iota-utils-transform-var-transform + $iota-utils-transform-lowercase-name} {
+  text-transform: lowercase !important;
+}
+
+
+
+
+// Responsive Transform Utilities
+
+@if ($iota-utils-transform-res == true) {
+
+  @each $breakpoint-name, $breakpoint-size in $iota-utils-transform-breakpoints {
+
+    @media #{$breakpoint-size} {
+
+      .#{$iota-utils-transform-var-transform + $iota-utils-transform-capitalize-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        text-transform: capitalize !important;
+      }
+
+      .#{$iota-utils-transform-var-transform + $iota-utils-transform-uppercase-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        text-transform: uppercase !important;
+      }
+
+      .#{$iota-utils-transform-var-transform + $iota-utils-transform-lowercase-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        text-transform: lowercase !important;
+      }
+
+    }
+
+  }
+
+}

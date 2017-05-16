@@ -1,0 +1,26 @@
+// Type Object
+
+
+
+
+// Options
+
+$iota-objs-type             : true;
+
+$iota-objs-type-namespace   : 'type-' !default;
+
+$iota-objs-type-sizes       : () !default;
+$iota-objs-type-breakpoints : $iota-global-breakpoints !default;
+
+
+
+
+// Type Sizes
+
+@each $type, $sizes in $iota-objs-type-sizes {
+  
+  .#{$iota-global-objects-namespace + $iota-objs-type-namespace + $type} {
+    @include _iota-generate-type-sizes($sizes, $iota-objs-type-breakpoints);
+  }
+  
+}

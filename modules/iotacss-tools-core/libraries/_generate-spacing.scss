@@ -1,0 +1,16 @@
+@mixin _iota-generate-spacing($props...){
+  $spacing-default  : nth($props, 2);
+  $spacing-extra    : nth($props, 3);
+
+  @include _iota-generate-spacing-classes($spacing-default, null, $props...);
+
+  @each $spacing-name, $spacing-size in $spacing-extra {
+    @include _iota-generate-spacing-classes($spacing-size, $spacing-name, $props...);
+  }
+
+  @include _iota-generate-spacing-responsive-classes($spacing-default, null, $props...);
+
+  @each $spacing-name, $spacing-size in $spacing-extra {
+    @include _iota-generate-spacing-responsive-classes($spacing-size, $spacing-name, $props...);
+  }
+}

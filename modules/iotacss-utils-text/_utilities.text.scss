@@ -1,0 +1,69 @@
+// Text Utility
+
+
+
+
+// Options
+
+$iota-utils-text              : true;
+
+$iota-utils-text-namespace    : 'text-' !default;
+$iota-utils-text-left-name    : 'left' !default;
+$iota-utils-text-right-name   : 'right' !default;
+$iota-utils-text-center-name  : 'center' !default;
+
+$iota-utils-text-res          : false !default;
+$iota-utils-text-breakpoints  : $iota-global-breakpoints !default;
+
+
+
+
+// Helper Local Utilities
+
+$iota-utils-text-var-text: $iota-global-utilities-namespace + $iota-utils-text-namespace;
+
+
+
+
+// Text Utilities
+
+.#{$iota-utils-text-var-text + $iota-utils-text-left-name} {
+  @include _iota-direction-property('text-align', 'left');
+}
+
+.#{$iota-utils-text-var-text + $iota-utils-text-right-name} {
+  @include _iota-direction-property('text-align', 'right');
+}
+
+.#{$iota-utils-text-var-text + $iota-utils-text-center-name} {
+  text-align: center !important;
+}
+
+
+
+
+// Text Responsive Utilities
+
+@if ($iota-utils-text-res == true) {
+
+  @each $breakpoint-name, $breakpoint-size in $iota-utils-text-breakpoints {
+
+    @media #{$breakpoint-size} {
+    
+      .#{$iota-utils-text-var-text + $iota-utils-text-left-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        @include _iota-direction-property('text-align', 'left');
+      }
+
+      .#{$iota-utils-text-var-text + $iota-utils-text-right-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        @include _iota-direction-property('text-align', 'right');
+      }
+
+      .#{$iota-utils-text-var-text + $iota-utils-text-center-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        text-align: center !important;
+      }
+
+    }
+
+  }
+  
+}

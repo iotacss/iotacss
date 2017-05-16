@@ -1,0 +1,17 @@
+// Breakpoint Mixin
+
+$iota-tools-breakpoint: true;
+
+@mixin iota-breakpoint($size, $breakpoints: $iota-global-breakpoints) {
+  $breakpoint-found: map-has-key($breakpoints, $size);
+  
+  @if ($breakpoint-found == true) {
+    $breakpoint: map-get($breakpoints, $size);
+
+    @media #{$breakpoint} {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint size " + #{$size} + " doesn't exist."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "iotacss-utils-text",
+  "version": "1.0.2",
+  "description": "Text utility for iotaCSS",
+  "main": "_utilities.text.scss",
+  "repository": "https://github.com/iotacss/iotacss/tree/master/modules/iotacss-utils-text",
+  "license": "Apache-2.0",
+  "keywords": [
+    "iotacss",
+    "css",
+    "sass",
+    "bem",
+    "oocss"
+  ],
+  "author": "Dimitris Psaropoulos <info@harby.me>"
+}

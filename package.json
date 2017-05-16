@@ -1,0 +1,15 @@
+{
+  "name": "iotacss",
+  "version": "1.0.0",
+  "description": "All iotaCSS's modules in one place",
+  "repository": "iotacss/iotacss",
+  "keywords": [
+    "iotacss",
+    "css",
+    "sass",
+    "bem",
+    "oocss"
+  ],
+  "license": "Apache-2.0",
+  "author": "Dimitris Psaropoulos <info@harby.me>"
+}

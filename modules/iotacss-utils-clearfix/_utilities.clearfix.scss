@@ -1,0 +1,29 @@
+// Clearfix Utility
+
+
+
+
+// Options
+
+$iota-utils-clearfix            : true;
+
+$iota-utils-clearfix-namespace  : 'cf' !default;
+
+
+
+
+// Helper Local Variables
+
+$iota-utils-clearfix-var-clearfix: $iota-global-utilities-namespace + $iota-utils-clearfix-namespace;
+
+
+
+
+// Clearfix Utility
+
+.#{$iota-utils-clearfix-var-clearfix}:after,
+%#{$iota-utils-clearfix-var-clearfix}:after {
+  content: "";
+  display: table;
+  clear: both;
+}

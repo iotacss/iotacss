@@ -1,0 +1,16 @@
+{
+  "name": "iotacss-settings-core",
+  "version": "1.0.2",
+  "description": "Core settings for iotaCSS",
+  "main": "_settings.core.scss",
+  "repository": "https://github.com/iotacss/iotacss/tree/master/modules/iotacss-settings-core",
+  "license": "Apache-2.0",
+  "keywords": [
+    "iotacss",
+    "css",
+    "bem",
+    "oocss",
+    "sass"
+  ],
+  "author": "Dimitris Psaropoulos <info@harby.me>"
+}

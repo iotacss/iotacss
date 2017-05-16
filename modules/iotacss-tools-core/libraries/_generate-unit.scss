@@ -1,0 +1,25 @@
+@mixin _iota-generate-unit(
+  $property,
+  $suffix,
+  $units)
+{
+  $suffix: if($suffix, #{'-' + _iota-direction($suffix)}, '');
+
+  @if _iota-is-number($units) {
+    #{$property + $suffix}: $units;
+  }
+  
+  @if _iota-is-map($units) {
+    @if _iota-map-contains-null($units) {
+      #{$property + $suffix}: map-get($units, null);
+    }
+
+    @each $breakpoint-name, $gutter-size in $units {
+      @if $breakpoint-name {
+        @include _iota-breakpoint($breakpoint-name) {
+          #{$property + $suffix}: $gutter-size;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@mixin iota-border-left-color($value) {
+  @include _iota-directional-property(border, color, null null null $value);
+}
+
+@mixin iota-border-right-color($value) {
+  @include _iota-directional-property(border, color, null $value null null);
+}
+
+@mixin iota-border-color($values) {
+  @include _iota-directional-property(border, color, $values);
+}

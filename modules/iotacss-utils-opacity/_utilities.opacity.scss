@@ -1,0 +1,32 @@
+// Opacity Utility
+
+
+
+
+// Options
+
+$iota-utils-opacity           : true;
+
+$iota-utils-opacity-namespace : 'opacity-' !default;
+
+$iota-utils-opacity-sizes     : () !default;
+
+
+
+
+// Helper Local Variables
+
+$iota-utils-opacity-var-opacity: $iota-global-utilities-namespace + $iota-utils-opacity-namespace;
+
+
+
+
+// Opacity Utilities
+
+@each $opacity-name, $opacity-value in $iota-utils-opacity-sizes {
+  
+  .#{$iota-utils-opacity-var-opacity + $opacity-name} {
+    opacity: #{$opacity-value} !important;
+  }
+
+}

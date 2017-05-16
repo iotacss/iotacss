@@ -1,0 +1,60 @@
+// Float Utility
+
+
+
+
+// Options
+
+$iota-utils-float             : true;
+
+$iota-utils-float-namespace   : 'float-' !default;
+$iota-utils-float-left-name   : 'left' !default;
+$iota-utils-float-right-name  : 'right' !default;
+
+$iota-utils-float-res         : false !default;
+$iota-utils-float-breakpoints : $iota-global-breakpoints !default;
+
+
+
+
+// Helper Local Variables
+
+$iota-utils-float-var-float: $iota-global-utilities-namespace + $iota-utils-float-namespace;
+
+
+
+
+// Float Utilities
+
+.#{$iota-utils-float-var-float + $iota-utils-float-left-name} {
+  @include _iota-direction-property('float', 'left');
+}
+
+.#{$iota-utils-float-var-float + $iota-utils-float-right-name} {
+  @include _iota-direction-property('float', 'right');
+}
+
+
+
+
+// Float Responsive Utilities
+
+@if ($iota-utils-float-res == true) {
+
+  @each $breakpoint-name, $breakpoint-size in $iota-utils-float-breakpoints {
+
+    @media #{$breakpoint-size} {
+    
+      .#{$iota-utils-float-var-float + $iota-utils-float-left-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        @include _iota-direction-property('float', 'left');
+      }
+
+      .#{$iota-utils-float-var-float + $iota-utils-float-right-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        @include _iota-direction-property('float', 'right');
+      }
+
+    }
+
+  }
+  
+}

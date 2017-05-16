@@ -1,0 +1,68 @@
+// Size Utility
+
+
+
+
+$iota-utils-size              : true;
+
+$iota-utils-size-namespace    : '' !default;
+
+$iota-utils-size-columns      : $iota-global-columns !default;
+
+$iota-utils-size-delimiter    : \/ !default;
+
+$iota-utils-size-res          : false !default;
+$iota-utils-size-breakpoints  : $iota-global-breakpoints !default;
+
+
+
+
+// Helper Local Variables
+
+$iota-utils-size-var-size: $iota-global-utilities-namespace + $iota-utils-size-namespace;
+
+
+
+
+// Size Utilities
+
+@each $column-size in $iota-utils-size-columns {
+
+  @for $i from 1 through $column-size {
+
+    .#{$iota-utils-size-var-size + $i + $iota-utils-size-delimiter + $column-size} {
+      width: ((100 / $column-size) * $i) * 1% !important;
+    }
+
+  }
+
+}
+
+
+
+
+// Responsive Size Utilities
+
+@if ($iota-utils-size-res == true) {
+
+  @each $breakpoint-name, $breakpoint-size in $iota-utils-size-breakpoints {
+
+    @media #{$breakpoint-size} {
+
+      @each $column-size in $iota-utils-size-columns {
+
+        @for $i from 1 through $column-size {
+
+          .#{$iota-utils-size-var-size + $i + $iota-utils-size-delimiter + $column-size + $iota-global-breakpoint-separator + $breakpoint-name} {
+            width: ((100 / $column-size) * $i) * 1% !important;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

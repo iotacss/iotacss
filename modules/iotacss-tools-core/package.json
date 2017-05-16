@@ -1,0 +1,16 @@
+{
+  "name": "iotacss-tools-core",
+  "version": "1.0.9",
+  "description": "Core tools for iotaCSS",
+  "main": "_tools.core.scss",
+  "repository": "https://github.com/iotacss/iotacss/tree/master/modules/iotacss-tools-core",
+  "license": "Apache-2.0",
+  "keywords": [
+    "iotacss",
+    "css",
+    "sass",
+    "bem",
+    "oocss"
+  ],
+  "author": "Dimitris Psaropoulos <info@harby.me>"
+}

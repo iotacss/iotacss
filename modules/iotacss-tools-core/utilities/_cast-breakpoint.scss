@@ -1,0 +1,9 @@
+@function _iota-cast-breakpoint(
+  $breakpoint
+) {
+  @if ($breakpoint != '') {
+    @return #{$iota-global-breakpoint-separator + $breakpoint};
+  }
+
+  @return $breakpoint;
+}

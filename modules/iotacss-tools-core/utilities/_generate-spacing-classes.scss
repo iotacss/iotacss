@@ -1,0 +1,11 @@
+@mixin _iota-generate-spacing-classes($sizes, $suffix, $props...) {
+  $spacing-breakpoints  : nth($props, 12);
+
+  @if (type-of($sizes) == 'number' or type-of($sizes) == 'list') {
+    @include _iota-spacing-property($sizes, $suffix, $props...);
+  }
+
+  @if (type-of($sizes) == 'map') {
+    @include _iota-spacing-property(map-get($sizes, null), $suffix, $props...);
+  }
+}

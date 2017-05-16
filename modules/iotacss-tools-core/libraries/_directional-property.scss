@@ -1,0 +1,39 @@
+@mixin _iota-directional-property(
+    $property,
+    $suffix,
+    $values,
+    $important: false
+  ) {
+
+  $value-suffix: if($important, ' !important', '');
+  $suffix: if($suffix, '-#{$suffix}', '');
+
+  $top:    $property + '-' + 'top'                    + $suffix;
+  $bottom: $property + '-' + 'bottom'                 + $suffix;
+  $left:   $property + '-' + _iota-direction('left')  + $suffix;
+  $right:  $property + '-' + _iota-direction('right') + $suffix;
+  $all:    $property                                  + $suffix;
+
+  $values: _iota-compact-shorthand($values);
+
+  @if _iota-contains-falsy($values) {
+    @if nth($values, 1) { #{$top}: unquote(nth($values, 1) + $value-suffix) }
+
+    @if length($values) == 1 {
+      @if nth($values, 1) { #{$right}: unquote(nth($values, 1) + $value-suffix) }
+    } @else {
+      @if nth($values, 2) { #{$right}: unquote(nth($values, 2) + $value-suffix) }
+    }
+
+    @if length($values) == 2 {
+      @if nth($values, 1) { #{$bottom}: unquote(nth($values, 1) + $value-suffix) }
+      @if nth($values, 2) { #{$left}: unquote(nth($values, 2) + $value-suffix) }
+    } @else if length($values) == 3 {
+      @if nth($values, 3) { #{$bottom}: unquote(nth($values, 3) + $value-suffix) }
+      @if nth($values, 2) { #{$left}: unquote(nth($values, 2) + $value-suffix) }
+    } @else if length($values) == 4 {
+      @if nth($values, 3) { #{$bottom}: unquote(nth($values, 3) + $value-suffix) }
+      @if nth($values, 4) { #{$left}: unquote(nth($values, 4) + $value-suffix) }
+    }
+  } @else { #{$all}: unquote($values + $value-suffix) }
+}

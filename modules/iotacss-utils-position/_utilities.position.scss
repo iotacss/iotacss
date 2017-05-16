@@ -1,0 +1,78 @@
+//  Position Utility
+
+
+
+
+// Options
+
+$iota-utils-position                      : true;
+
+$iota-utils-position-namespace            : '' !default;
+$iota-utils-position-absolute-name        : 'absolute' !default;
+$iota-utils-position-fixed-name           : 'fixed' !default;
+$iota-utils-position-relative-name        : 'relative' !default;
+$iota-utils-position-static-name          : 'static' !default;
+
+$iota-utils-position-res                  : false !default;
+$iota-utils-position-breakpoints          : $iota-global-breakpoints !default;
+
+
+
+
+// Helper Local Variables
+
+$iota-utils-position-var-position: $iota-global-utilities-namespace + $iota-utils-position-namespace;
+
+
+
+
+// Position Utilities
+
+.#{$iota-utils-position-var-position + $iota-utils-position-absolute-name} {
+  position: absolute !important;
+}
+
+.#{$iota-utils-position-var-position + $iota-utils-position-fixed-name} {
+  position: fixed !important;
+}
+
+.#{$iota-utils-position-var-position + $iota-utils-position-relative-name} {
+  position: relative !important;
+}
+
+.#{$iota-utils-position-var-position + $iota-utils-position-static-name} {
+  position: static !important;
+}
+
+
+
+
+// Position Responsive Utilities
+
+@if $iota-utils-position-res {
+
+  @each $breakpoint-name, $breakpoint-size in $iota-utils-position-breakpoints {
+
+    @media #{$breakpoint-size} {
+
+      .#{$iota-utils-position-var-position + $iota-utils-position-absolute-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        position: absolute !important;
+      }
+
+      .#{$iota-utils-position-var-position + $iota-utils-position-fixed-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        position: fixed !important;
+      }
+
+      .#{$iota-utils-position-var-position + $iota-utils-position-relative-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        position: relative !important;
+      }
+
+      .#{$iota-utils-position-var-position + $iota-utils-position-static-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        position: static !important;
+      }
+
+    }
+
+  }
+
+}

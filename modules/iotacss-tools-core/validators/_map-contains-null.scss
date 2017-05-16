@@ -1,0 +1,9 @@
+@function _iota-map-contains-null($map) {
+  @each $key, $value in $map {
+    @if ($key == null) {
+      @return true;
+    }
+  }
+
+  @return false;
+}

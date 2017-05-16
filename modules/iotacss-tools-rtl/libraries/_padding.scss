@@ -1,0 +1,11 @@
+@mixin iota-padding-left($value) {
+  @include _iota-directional-property('padding', null, null null null $value, false);
+}
+
+@mixin iota-padding-right($value) {
+  @include _iota-directional-property('padding', null, null $value null null, false);
+}
+
+@mixin iota-padding($value) {
+  @include _iota-directional-property('padding', null, $value, false);
+}

@@ -1,0 +1,85 @@
+//  Display Utility
+
+
+
+
+$iota-utils-display                       : true;
+
+$iota-utils-display-namespace             : '' !default;
+$iota-utils-display-flex-name             : 'flex' !default;
+$iota-utils-display-block-name            : 'block' !default;
+$iota-utils-display-hidden-name           : 'hidden' !default;
+$iota-utils-display-inline-name           : 'inline' !default;
+$iota-utils-display-inline-block-name     : 'inline-block' !default;
+
+$iota-utils-display-res                   : false !default;
+$iota-utils-display-breakpoints           : $iota-global-breakpoints !default;
+
+
+
+
+// Helper Local Variables
+
+$iota-utils-display-var-display: $iota-global-utilities-namespace + $iota-utils-display-namespace;
+
+
+
+
+// Display Utilities
+
+.#{$iota-utils-display-var-display + $iota-utils-display-flex-name} {
+  display: flex !important;
+}
+
+.#{$iota-utils-display-var-display + $iota-utils-display-block-name} {
+  display: block !important;
+}
+
+.#{$iota-utils-display-var-display + $iota-utils-display-hidden-name} {
+  display: none !important;
+}
+
+.#{$iota-utils-display-var-display + $iota-utils-display-inline-name} {
+  display: inline !important;
+}
+
+.#{$iota-utils-display-var-display + $iota-utils-display-inline-block-name} {
+  display: inline-block !important;
+}
+
+
+
+
+// Display Responsive Utilities
+
+@if ($iota-utils-display-res == true) {
+
+  @each $breakpoint-name, $breakpoint-size in $iota-utils-display-breakpoints {
+
+    @media #{$breakpoint-size} {
+
+      .#{$iota-utils-display-var-display + $iota-utils-display-flex-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        display: flex !important;
+      }
+    
+      .#{$iota-utils-display-var-display + $iota-utils-display-block-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        display: block !important;
+      }
+
+      .#{$iota-utils-display-var-display + $iota-utils-display-hidden-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        display: none !important;
+      }
+
+      .#{$iota-utils-display-var-display + $iota-utils-display-inline-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        display: inline !important;
+      }
+
+      .#{$iota-utils-display-var-display + $iota-utils-display-inline-block-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        display: inline-block !important;
+      }
+
+    }
+
+  }
+  
+}

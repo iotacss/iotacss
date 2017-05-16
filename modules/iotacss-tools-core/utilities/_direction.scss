@@ -1,0 +1,18 @@
+@function _iota-direction($direction) {
+  $options: (
+    'ltr'       : 'rtl',
+    'rtl'       : 'ltr',
+    'left'      : 'right',
+    'right'     : 'left',
+    'flex-start': 'flex-end',
+    'flex-end'  : 'flex-start'
+  );
+
+  @if ($iota-global-rtl == true) {
+    @if map-has-key($options, $direction) {
+      @return unquote(map-get($options, $direction));
+    }
+  }
+
+  @return unquote($direction);
+}

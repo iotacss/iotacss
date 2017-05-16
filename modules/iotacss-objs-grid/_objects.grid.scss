@@ -1,0 +1,229 @@
+// Grid Object
+
+
+
+
+// Options
+
+$iota-objs-grid                    : true;
+
+$iota-objs-grid-namespace          : 'grid' !default;
+$iota-objs-grid-column-name        : 'col' !default;
+$iota-objs-grid-align-right-name   : 'right' !default;
+$iota-objs-grid-align-center-name  : 'center' !default;
+$iota-objs-grid-align-top-name     : 'top' !default;
+$iota-objs-grid-align-middle-name  : 'middle' !default;
+$iota-objs-grid-align-bottom-name  : 'bottom' !default;
+$iota-objs-grid-align-around-name  : 'around' !default;
+$iota-objs-grid-align-between-name : 'between' !default;
+$iota-objs-grid-reverse-name       : 'rev' !default;
+$iota-objs-grid-equal-height-name  : 'equal-height' !default;
+
+$iota-objs-grid-gutter-default     : $iota-global-gutter-default !default;
+$iota-objs-grid-gutter-extra       : () !default;
+
+$iota-objs-grid-aligned            : false !default;
+
+$iota-objs-grid-rev                : false !default;
+
+$iota-objs-grid-flex               : $iota-global-flex !default;
+$iota-objs-grid-equal-height       : false !default;
+
+
+
+
+$iota-objs-grid-var-grid     : $iota-global-objects-namespace + $iota-objs-grid-namespace;
+$iota-objs-grid-var-grid-mod : $iota-objs-grid-var-grid + "--";
+$iota-objs-grid-var-grid-col : $iota-objs-grid-var-grid + "__" + $iota-objs-grid-column-name;
+
+
+
+
+.#{$iota-objs-grid-var-grid} {
+  @include _iota-generate-unit('margin', 'left', _iota-negative-unit($iota-objs-grid-gutter-default));
+  list-style: none;
+  box-sizing: border-box;
+
+  & > .#{$iota-objs-grid-var-grid-col} {
+    @include _iota-generate-unit('padding', 'left', $iota-objs-grid-gutter-default);
+    width: 100%;
+    box-sizing: inherit;
+  }
+}
+
+
+
+
+// Grid Object Extra Gutters
+
+@each $gutter-name, $gutter-size in $iota-objs-grid-gutter-extra {
+
+  .#{$iota-objs-grid-var-grid-mod + $gutter-name} {
+    @include _iota-generate-unit('margin', 'left', _iota-negative-unit($gutter-size));
+
+    & > .#{$iota-objs-grid-var-grid-col} {
+      @include _iota-generate-unit('padding', 'left', $gutter-size);
+    }
+
+  }
+
+}
+
+
+
+
+// Grid Object Flex
+
+@if ( $iota-objs-grid-flex == true ) {
+
+  .#{$iota-objs-grid-var-grid} {
+    display: flex;
+    flex-flow: row wrap;
+
+    & > .#{$iota-objs-grid-var-grid-col} {
+      box-sizing: inherit;
+      flex-basis: auto;
+      min-width: 0;
+    }
+  }
+
+
+
+
+  // Flex Grid Align
+
+  @if ( $iota-objs-grid-aligned == true ) {
+
+    .#{$iota-objs-grid-var-grid-mod + $iota-objs-grid-align-center-name} {
+      justify-content: center;
+    }
+
+    .#{$iota-objs-grid-var-grid-mod + $iota-objs-grid-align-right-name} {
+      @include _iota-direction-property('justify-content', 'flex-end', false);
+    }
+
+    .#{$iota-objs-grid-var-grid-mod + $iota-objs-grid-align-top-name} {
+      align-items: flex-start;
+    }
+
+    .#{$iota-objs-grid-var-grid-mod + $iota-objs-grid-align-middle-name} {
+      align-items: center;
+    }
+
+    .#{$iota-objs-grid-var-grid-mod + $iota-objs-grid-align-bottom-name} {
+      align-items: flex-end;
+    }
+
+    .#{$iota-objs-grid-var-grid-mod + $iota-objs-grid-align-around-name} {
+      justify-content: space-around;
+    }
+
+    .#{$iota-objs-grid-var-grid-mod + $iota-objs-grid-align-between-name} {
+      justify-content: space-between;
+    }
+
+  }
+
+
+
+
+  // Flex Grid Reversed
+
+  @if ( $iota-objs-grid-rev == true ) {
+
+    .#{$iota-objs-grid-var-grid-mod + $iota-objs-grid-reverse-name} {
+      flex-direction: row-reverse;
+    }
+
+  }
+
+
+
+
+  // Grid Object with Equal Height Columns
+
+  @if ($iota-objs-grid-equal-height == true) {
+
+    .#{$iota-objs-grid-var-grid-mod + $iota-objs-grid-equal-height-name} {
+
+      & > .#{$iota-objs-grid-var-grid-col} {
+        display: flex;
+      }
+    }
+
+  }
+
+
+
+
+// Grid Object Classic
+
+} @else {
+
+  .#{$iota-objs-grid-var-grid} {
+
+    & > .#{$iota-objs-grid-var-grid-col} {
+      display: inline-block;
+      width: 100%;
+      min-height: 1px;
+      vertical-align: top;
+    }
+  }
+
+
+
+
+  // Grid Object Extra Alignents
+
+  @if ( $iota-objs-grid-aligned == true ) {
+
+    .#{$iota-objs-grid-var-grid-mod + $iota-objs-grid-align-right-name} {
+      text-align: _iota-direction('right');
+
+      & > .#{$iota-objs-grid-var-grid-col} {
+        text-align: _iota-direction('left');
+      }
+    }
+
+    .#{$iota-objs-grid-var-grid-mod + $iota-objs-grid-align-center-name} {
+      text-align: center;
+
+      & > .#{$iota-objs-grid-var-grid-col} {
+        text-align: _iota-direction('left');
+      }
+    }
+
+    .#{$iota-objs-grid-var-grid-mod + $iota-objs-grid-align-middle-name} {
+      & > .#{$iota-objs-grid-var-grid-col} {
+        vertical-align: middle;
+      }
+    }
+
+    .#{$iota-objs-grid-var-grid-mod + $iota-objs-grid-align-bottom-name} {
+      & > .#{$iota-objs-grid-var-grid-col} {
+        vertical-align: bottom;
+      }
+    }
+
+  }
+
+
+
+
+  // Grid Object Reversed
+
+  @if ( $iota-objs-grid-rev == true ) {
+    
+    .#{$iota-objs-grid-var-grid}--rev {
+      @include _iota-direction-property('direction', 'rtl', false);
+      @include _iota-direction-property('text-align', 'left', false);
+      
+      & > .#{$iota-objs-grid-var-grid-col} {
+        @include _iota-direction-property('direction', 'ltr', false);
+        @include _iota-direction-property('text-align', 'left', false);
+      }
+    }
+    
+  }
+
+}

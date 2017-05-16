@@ -1,0 +1,11 @@
+@function _iota-negative-unit($values) {
+
+  @if _iota-is-map($values) {
+    @each $key, $value in $values {
+      $values: map-merge($values, ($key: -$value));
+    }
+    @return $values;
+  } @else {
+    @return -$values;
+  }
+}

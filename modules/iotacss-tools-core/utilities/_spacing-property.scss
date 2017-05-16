@@ -1,0 +1,53 @@
+@mixin _iota-spacing-property($size, $suffix, $props...) {
+  $property: nth($props, 1);
+  $property-prefix: '.' + $iota-global-utilities-namespace + nth($props, 4);
+  $property-suffix: if($suffix, $suffix, '');
+
+  $all    : $property-prefix                    + $property-suffix;
+  $top    : $property-prefix + nth($props, 5)   + $property-suffix;
+  $right  : $property-prefix + nth($props, 6)   + $property-suffix;
+  $bottom : $property-prefix + nth($props, 7)   + $property-suffix;
+  $left   : $property-prefix + nth($props, 8)   + $property-suffix;
+  $ver    : $property-prefix + nth($props, 9)   + $property-suffix;
+  $horz   : $property-prefix + nth($props, 10)  + $property-suffix;
+
+  @if type-of($size) == 'number' {
+    #{$all}    { @include _iota-directional-property($property, null, $size, true) }
+    #{$top}    { @include _iota-directional-property($property, null, $size null null, true) }
+    #{$right}  { @include _iota-directional-property($property, null, null $size null null, true) }
+    #{$bottom} { @include _iota-directional-property($property, null, null null $size, true) }
+    #{$left}   { @include _iota-directional-property($property, null, null null null $size, true) }
+    #{$ver}    { @include _iota-directional-property($property, null, $size null, true) }
+    #{$horz}   { @include _iota-directional-property($property, null, null $size, true) }
+  }
+
+  @if type-of($size) == 'list' {
+    @if _iota-is-list-child($size, 1) {
+      #{$all} { @include _iota-directional-property($property, null, nth($size, 1), true) }
+    }
+
+    @if _iota-is-list-child($size, 2) {
+      #{$top} { @include _iota-directional-property($property, null, nth($size, 2) null null, true) }
+    }
+
+    @if _iota-is-list-child($size, 3) {
+      #{$right}  { @include _iota-directional-property($property, null, null nth($size, 3) null null, true) }
+    }
+
+    @if _iota-is-list-child($size, 4) {
+      #{$bottom} { @include _iota-directional-property($property, null, null null nth($size, 4), true) }
+    }
+
+    @if _iota-is-list-child($size, 5) {
+      #{$left}   { @include _iota-directional-property($property, null, null null null nth($size, 5), true) }
+    }
+
+    @if _iota-is-list-child($size, 6) {
+      #{$ver}    { @include _iota-directional-property($property, null, nth($size, 6) null, true) }
+    }
+
+    @if _iota-is-list-child($size, 7) {
+      #{$horz}   { @include _iota-directional-property($property, null, null nth($size, 7), true) }
+    }
+  }
+}

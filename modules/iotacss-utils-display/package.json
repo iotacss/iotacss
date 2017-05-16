@@ -1,0 +1,16 @@
+{
+  "name": "iotacss-utils-display",
+  "version": "1.0.2",
+  "description": "Display utility for iotaCSS",
+  "main": "_utilities.display.scss",
+  "repository": "https://github.com/iotacss/iotacss/tree/master/modules/iotacss-utils-display",
+  "license": "Apache-2.0",
+  "keywords": [
+    "iotacss",
+    "css",
+    "sass",
+    "bem",
+    "oocss"
+  ],
+  "author": "Dimitris Psaropoulos <info@harby.me>"
+}

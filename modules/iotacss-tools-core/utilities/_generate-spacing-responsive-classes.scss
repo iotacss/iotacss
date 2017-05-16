@@ -1,0 +1,43 @@
+@mixin _iota-generate-spacing-responsive-classes($sizes, $suffix, $props...) {
+  $spacing-responsive   : nth($props, 11);
+  $spacing-breakpoints  : nth($props, 12);
+
+  @if (type-of($sizes) == 'number') {
+    @if ($spacing-responsive == true) {
+      @each $breakpoint-name, $breakpoint-size in $spacing-breakpoints {
+        @media #{$breakpoint-size} {
+          $breakpoint-suffix: if($suffix, $suffix, '') + _iota-cast-breakpoint($breakpoint-name);
+          @include _iota-spacing-property($sizes, $breakpoint-suffix, $props...);
+        }
+      }
+    }
+  }
+
+  @if (type-of($sizes) == 'map') {
+    @each $breakpoint, $size in $sizes {
+      @if $breakpoint {
+        @include _iota-breakpoint($breakpoint, $spacing-breakpoints) {
+          @include _iota-spacing-property($size, $suffix, $props...);
+        }
+      }
+    }
+
+    @if ($spacing-responsive == true) {
+      $breakpoints-temp         : _iota-equalize-map($spacing-breakpoints, $sizes);
+      $spacing-breakpoints-temp : _iota-equalize-map($sizes, $spacing-breakpoints);
+
+      @each $breakpoint-name, $breakpoint-size in $breakpoints-temp {
+        @each $spacing-breakpoint-name, $spacing-breakpoint-size in $spacing-breakpoints-temp {
+          $breakpoint-index         : _iota-map-index($breakpoints-temp, $breakpoint-name);
+          $spacing-breakpoint-index : _iota-map-index($spacing-breakpoints-temp, $spacing-breakpoint-name);
+
+          @if ($spacing-breakpoint-index >= $breakpoint-index) {
+            @include _iota-breakpoint($spacing-breakpoint-name) {
+              @include _iota-spacing-property($spacing-breakpoint-size, if($suffix, $suffix, '') + _iota-cast-breakpoint($breakpoint-name), $props...);
+            }
+          }
+        }
+      }
+    }
+  }
+}

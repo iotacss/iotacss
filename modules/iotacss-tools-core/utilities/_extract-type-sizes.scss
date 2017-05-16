@@ -1,0 +1,12 @@
+@mixin _iota-extract-type-sizes($sizes) {
+
+  @if ( length($sizes) == 2 ) {
+    font-size: nth($sizes, 1);
+    line-height: nth($sizes, 2);
+  }
+
+  @else {
+    font-size: $sizes;  
+  }
+  
+}

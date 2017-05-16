@@ -1,0 +1,8 @@
+// Type Tool
+
+
+
+
+@mixin iota-type($value, $breakpoints: $iota-global-breakpoints) {
+  @include _iota-generate-type-sizes($value, $breakpoints);
+}

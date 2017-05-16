@@ -1,0 +1,13 @@
+@function _iota-equalize-map($map1, $map2) {
+  @each $key, $value in $map1 {
+
+    @if (map-has-key($map2, $key) == false) {
+
+      $map1: map-remove($map1, $key);
+
+    }
+
+  }
+
+  @return $map1;
+}

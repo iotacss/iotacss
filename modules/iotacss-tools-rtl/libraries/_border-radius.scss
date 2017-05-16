@@ -1,0 +1,36 @@
+@mixin iota-border-top-left-radius($value) {
+  border-top-#{_iota-direction(left)}-radius: $value;
+}
+
+@mixin iota-border-top-right-radius($value) {
+  border-top-#{_iota-direction(right)}-radius: $value;
+}
+
+@mixin iota-border-bottom-left-radius($value) {
+  border-bottom-#{_iota-direction(left)}-radius: $value;
+}
+
+@mixin iota-border-bottom-right-radius($value) {
+  border-bottom-#{_iota-direction(right)}-radius: $value;
+}
+
+@mixin iota-border-top-radius($value) {
+  @include iota-border-top-left-radius($value);
+  @include iota-border-top-right-radius($value);
+}
+
+@mixin iota-border-right-radius($value) {
+  @include iota-border-top-right-radius($value);
+  @include iota-border-bottom-right-radius($value);
+}
+
+@mixin iota-border-bottom-radius($value) {
+  @include iota-border-bottom-left-radius($value);
+  @include iota-border-bottom-right-radius($value);
+}
+
+@mixin iota-border-left-radius($value) {
+  @include iota-border-top-left-radius($value);
+  @include iota-border-bottom-left-radius($value);
+}
+

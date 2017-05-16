@@ -1,0 +1,16 @@
+{
+  "name": "iotacss-utils-pull",
+  "version": "1.0.3",
+  "description": "Pull utility for iotaCSS",
+  "main": "_utilities.pull.scss",
+  "repository": "https://github.com/iotacss/iotacss/tree/master/modules/iotacss-utils-pull",
+  "license": "Apache-2.0",
+  "keywords": [
+    "iotacss",
+    "css",
+    "bem",
+    "sass",
+    "oocss"
+  ],
+  "author": "Dimitris Psaropoulos <info@harby.me>"
+}

@@ -1,0 +1,32 @@
+// Weight Utility
+
+
+
+
+// Options
+
+$iota-utils-weight            : true;
+
+$iota-utils-weight-namespace  : 'weight-' !default;
+
+$iota-utils-weight-sizes      : () !default;
+
+
+
+
+// Helper Local Variables
+
+$iota-utils-weight-var-weight: $iota-global-utilities-namespace + $iota-utils-weight-namespace;
+
+
+
+
+// Weight Utilities
+
+@each $weight-name, $weight-size in $iota-utils-weight-sizes {
+  
+  .#{$iota-utils-weight-var-weight + $weight-name} {
+    font-weight: #{$weight-size} !important;
+  }
+
+}

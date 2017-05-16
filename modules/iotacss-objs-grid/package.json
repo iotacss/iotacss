@@ -1,0 +1,16 @@
+{
+  "name": "iotacss-objs-grid",
+  "version": "1.0.4",
+  "description": "Grid object for iotaCSS",
+  "main": "_objects.grid.scss",
+  "repository": "https://github.com/iotacss/iotacss/tree/master/modules/iotacss-objs-grid",
+  "license": "Apache-2.0",
+  "keywords": [
+    "iotacss",
+    "css",
+    "sass",
+    "bem",
+    "oocss"
+  ],
+  "author": "Dimitris Psaropoulos <info@harby.me>"
+}

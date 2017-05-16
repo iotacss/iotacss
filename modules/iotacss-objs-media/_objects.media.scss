@@ -1,0 +1,289 @@
+// Media Object
+
+
+
+
+// Options
+
+$iota-objs-media                      : true;
+
+$iota-objs-media-namespace            : 'media' !default;
+$iota-objs-media-fixed-name           : 'fixed' !default;
+$iota-objs-media-fluid-name           : 'fluid' !default;
+$iota-objs-media-reversed-name        : 'rev' !default;
+$iota-objs-media-align-middle-name    : 'middle' !default;
+$iota-objs-media-align-bottom-name    : 'bottom' !default;
+$iota-objs-media-responsive-name      : 'res' !default;
+
+$iota-objs-media-gutter-default       : $iota-global-gutter-default !default;
+$iota-objs-media-gutter-extra         : () !default;
+
+$iota-objs-media-rev                  : false !default;
+
+$iota-objs-media-aligned              : false !default;
+
+$iota-objs-media-flex                 : $iota-global-flex !default;
+
+$iota-objs-media-res                  : false !default;
+$iota-objs-media-collapse-at          : 767px !default;
+
+
+
+
+$iota-objs-media-var-media       : $iota-global-objects-namespace + $iota-objs-media-namespace;
+$iota-objs-media-var-media-mod   : $iota-objs-media-var-media + "--";
+$iota-objs-media-var-media-fixed : $iota-objs-media-var-media + "__" + $iota-objs-media-fixed-name;
+$iota-objs-media-var-media-fluid : $iota-objs-media-var-media + "__" + $iota-objs-media-fluid-name;
+
+
+
+
+// Flex Media Object
+
+@if ($iota-objs-media-flex == true) {
+
+  .#{$iota-objs-media-var-media} {
+    display: flex;
+    align-items: flex-start;
+
+    & > .#{$iota-objs-media-var-media-fixed} {
+      @include _iota-generate-unit('padding', 'right', $iota-objs-media-gutter-default);
+    }
+
+    & > .#{$iota-objs-media-var-media-fluid} {
+      flex: 1;
+    }
+  }
+
+
+
+
+  // Flex Media Object Reversed
+
+  @if ($iota-objs-media-rev == true) {
+
+    .#{$iota-objs-media-var-media-mod + $iota-objs-media-reversed-name} {
+
+      & > .#{$iota-objs-media-var-media-fixed} {
+        @include _iota-generate-unit('padding', 'right', 0);
+        @include _iota-generate-unit('padding', 'left', $iota-objs-media-gutter-default);
+        order: 1;
+      }
+
+    }
+
+  }
+
+
+
+
+  // Media Object Aligned
+
+  @if ($iota-objs-media-aligned == true) {
+
+    .#{$iota-objs-media-var-media-mod + $iota-objs-media-align-middle-name} {
+      align-items: center;
+    }
+
+    .#{$iota-objs-media-var-media-mod + $iota-objs-media-align-bottom-name} {
+      align-items: flex-end;
+    }
+
+  }
+
+
+
+
+// Media Object
+
+} @else {
+
+  .#{$iota-objs-media-var-media} {
+    display: table;
+    width: 100%;
+
+    & > .#{$iota-objs-media-var-media-fixed},
+    & > .#{$iota-objs-media-var-media-fluid} {
+      display: table-cell;
+    }
+
+    & > .#{$iota-objs-media-var-media-fixed} {
+      width: 1px;
+      @include _iota-generate-unit('padding', 'right', $iota-objs-media-gutter-default);
+
+      > img {
+        max-width: none;
+      }
+    }
+
+    & > .#{$iota-objs-media-var-media-fluid} {
+      width: auto;
+
+      &,
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+
+
+
+  // Media Object Reserved
+
+  @if ($iota-objs-media-rev == true) { 
+
+    .#{$iota-objs-media-var-media-mod + $iota-objs-media-reversed-name} {
+      @include _iota-direction-property('direction', 'rtl', false);
+
+      & > .#{$iota-objs-media-var-media-fixed},
+      & > .#{$iota-objs-media-var-media-fluid} {
+        @include _iota-direction-property('direction', 'ltr', false);
+      }
+
+      & > .#{$iota-objs-media-var-media-fixed} {
+        @include _iota-generate-unit('padding', 'right', 0);
+        @include _iota-generate-unit('padding', 'left', $iota-objs-media-gutter-default);
+      }
+    }
+
+  }
+
+
+
+
+  // Media Object Aligned
+
+  @if ($iota-objs-media-aligned == true) {
+
+    .#{$iota-objs-media-var-media-mod + $iota-objs-media-align-middle-name} {
+
+      & > .#{$iota-objs-media-var-media-fixed},
+      & > .#{$iota-objs-media-var-media-fluid} {
+        vertical-align: middle;
+      }
+    }
+
+    .#{$iota-objs-media-var-media-mod + $iota-objs-media-align-bottom-name} {
+
+      & > .#{$iota-objs-media-var-media-fixed},
+      & > .#{$iota-objs-media-var-media-fluid} {
+        vertical-align: bottom;
+      }
+    }
+
+  }
+
+}
+
+
+
+
+// Responsive Media Object
+
+@if ($iota-objs-media-res == true) {
+
+  @media screen and ( max-width: $iota-objs-media-collapse-at ) {
+
+    .#{$iota-objs-media-var-media-mod + $iota-objs-media-responsive-name} {
+      display: block;
+
+      & > .#{$iota-objs-media-var-media-fixed},
+      & > .#{$iota-objs-media-var-media-fluid} {
+        display: block;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      & > .#{$iota-objs-media-var-media-fixed} {
+        @include _iota-generate-unit('margin', 'bottom', $iota-objs-media-gutter-default);
+      }
+
+    }
+
+  }
+
+}
+
+
+
+
+// Media Object Sizes
+
+@each $media-gutter-name, $media-gutter-size in $iota-objs-media-gutter-extra {
+
+  .#{$iota-objs-media-var-media-mod + $media-gutter-name} {
+
+    & > .#{$iota-objs-media-var-media-fixed} {
+      @include _iota-generate-unit('padding', 'right', $media-gutter-size);
+    }
+
+
+
+
+    // Media Object Responsive
+
+    @if ($iota-objs-media-res == true) {
+
+      @media screen and ( max-width: $iota-objs-media-collapse-at ) {
+
+        &.#{$iota-objs-media-var-media-mod + $iota-objs-media-responsive-name} {
+          display: block;
+
+          & > .#{$iota-objs-media-var-media-fixed} {
+            padding-right: 0;
+            padding-left: 0;
+            @include _iota-generate-unit('margin', 'bottom', $media-gutter-size);
+          }
+
+        }
+
+      }
+
+    }
+
+
+
+
+    // Media Object Reserved
+
+    @if ($iota-objs-media-rev == true) {
+
+
+      // Media Object Reserved with Extra Sizes
+
+      &.#{$iota-objs-media-var-media-mod + $iota-objs-media-reversed-name} {
+
+        @media screen and ( min-width: ( $iota-objs-media-collapse-at + 1 ) ) {
+
+          & > .#{$iota-objs-media-var-media-fixed} {
+            @include _iota-generate-unit('padding', 'right', 0);
+            @include _iota-generate-unit('padding', 'left', $media-gutter-size);
+          }
+
+        }
+
+      }
+
+
+      // Media Object Reserved and Responsive with Extra Sizes
+
+      &.#{$iota-objs-media-var-media-mod + $iota-objs-media-reversed-name + ':not(.' + $iota-objs-media-var-media-mod + $iota-objs-media-responsive-name + ')'} {
+
+        @media screen and ( max-width: $iota-objs-media-collapse-at ) {
+
+          & > .#{$iota-objs-media-var-media-fixed} {
+            @include _iota-generate-unit('padding', 'right', 0);
+            @include _iota-generate-unit('padding', 'left', $media-gutter-size);
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

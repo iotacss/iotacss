@@ -1,0 +1,3 @@
+@mixin iota-justify-content($value) {
+  @include _iota-direction-property(justify-content, $value, false);
+}

@@ -1,0 +1,3 @@
+@function _iota-is-list-child($list, $pos) {
+  @return length($list) >= $pos and nth($list, $pos);
+}

@@ -1,0 +1,78 @@
+//  Align Utility
+
+
+
+
+// Options
+
+$iota-utils-align                : true;
+
+$iota-utils-align-namespace     : 'align-' !default;
+$iota-utils-align-top-name      : 'top' !default;
+$iota-utils-align-bottom-name   : 'bottom' !default;
+$iota-utils-align-middle-name   : 'middle' !default;
+$iota-utils-align-baseline-name : 'baseline' !default;
+
+$iota-utils-align-res           : false !default;
+$iota-utils-align-breakpoints   : $iota-global-breakpoints !default;
+
+
+
+
+// Helper local variables
+
+$iota-utils-align-var-align: $iota-global-utilities-namespace + $iota-utils-align-namespace;
+
+
+
+
+// Align Utilities
+
+.#{$iota-utils-align-var-align + $iota-utils-align-top-name} {
+  vertical-align: top !important;
+}
+
+.#{$iota-utils-align-var-align + $iota-utils-align-bottom-name} {
+  vertical-align: bottom !important;
+}
+
+.#{$iota-utils-align-var-align + $iota-utils-align-middle-name} {
+  vertical-align: middle !important;
+}
+
+.#{$iota-utils-align-var-align + $iota-utils-align-baseline-name} {
+  vertical-align: baseline !important;
+}
+
+
+
+
+// Responsive Align Utilities
+
+@if ($iota-utils-align-res == true) {
+
+  @each $breakpoint-name, $breakpoint-size in $iota-utils-align-breakpoints {
+
+    @media #{$breakpoint-size} {
+    
+      .#{$iota-utils-align-var-align + $iota-utils-align-top-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        vertical-align: top !important;
+      }
+
+      .#{$iota-utils-align-var-align + $iota-utils-align-bottom-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        vertical-align: bottom !important;
+      }
+
+      .#{$iota-utils-align-var-align + $iota-utils-align-middle-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        vertical-align: middle !important;
+      }
+
+      .#{$iota-utils-align-var-align + $iota-utils-align-baseline-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        vertical-align: baseline !important;
+      }
+
+    }
+
+  }
+
+}

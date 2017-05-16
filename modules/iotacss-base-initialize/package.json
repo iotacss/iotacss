@@ -1,0 +1,16 @@
+{
+  "name": "iotacss-base-initialize",
+  "version": "1.0.1",
+  "description": "Initialize for iotaCSS",
+  "main": "_base.initialize.scss",
+  "repository": "https://github.com/iotacss/iotacss/tree/master/modules/iotacss-base-initialize",
+  "license": "Apache-2.0",
+  "keywords": [
+    "iotacss",
+    "css",
+    "sass",
+    "bem",
+    "oocss"
+  ],
+  "author": "Dimitris Psaropoulos <info@harby.me>"
+}

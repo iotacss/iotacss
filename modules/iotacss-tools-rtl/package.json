@@ -1,0 +1,16 @@
+{
+  "name": "iotacss-tools-rtl",
+  "version": "1.0.0",
+  "description": "RTL tools for iotaCSS",
+  "main": "_tools.rtl.scss",
+  "repository": "https://github.com/iotacss/iotacss/tree/master/modules/iotacss-tools-rtl",
+  "license": "Apache-2.0",
+  "keywords": [
+    "iotacss",
+    "css",
+    "sass",
+    "bem",
+    "oocss"
+  ],
+  "author": "Dimitris Psaropoulos <info@harby.me>"
+}

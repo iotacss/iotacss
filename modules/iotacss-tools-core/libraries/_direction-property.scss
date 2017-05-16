@@ -1,0 +1,10 @@
+@mixin _iota-direction-property(
+  $property,
+  $direction,
+  $important: true
+) {
+
+  $property-value: _iota-direction($direction) + if($important, ' !important', '');
+
+  #{$property} : #{$property-value};
+}

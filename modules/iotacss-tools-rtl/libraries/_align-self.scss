@@ -1,0 +1,3 @@
+@mixin iota-align-self($value) {
+  @include _iota-direction-property(align-self, $value, false);
+}

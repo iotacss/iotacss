@@ -1,0 +1,7 @@
+@mixin iota-border-left($value) {
+  border-#{_iota-direction(left)}: $value;
+}
+
+@mixin iota-border-right($value) {
+  border-#{_iota-direction(right)}: $value;
+}

@@ -1,0 +1,13 @@
+@function _iota-map-index($map, $find) {
+  $index: 0;
+
+  @each $key, $value in $map {
+    @if ($key == $find) {
+      @return $index;
+    }
+
+    $index: $index + 1;
+  }
+
+  @return -1;
+}
