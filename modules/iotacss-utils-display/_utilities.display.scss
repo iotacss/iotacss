@@ -8,7 +8,7 @@ $iota-utils-display                       : true;
 $iota-utils-display-namespace             : '' !default;
 $iota-utils-display-flex-name             : 'flex' !default;
 $iota-utils-display-block-name            : 'block' !default;
-$iota-utils-display-hidden-name           : 'hidden' !default;
+$iota-utils-display-none-name             : 'none' !default;
 $iota-utils-display-inline-name           : 'inline' !default;
 $iota-utils-display-inline-block-name     : 'inline-block' !default;
 
@@ -35,7 +35,7 @@ $iota-utils-display-var-display: $iota-global-utilities-namespace + $iota-utils-
   display: block !important;
 }
 
-.#{$iota-utils-display-var-display + $iota-utils-display-hidden-name} {
+.#{$iota-utils-display-var-display + $iota-utils-display-none-name} {
   display: none !important;
 }
 
@@ -66,7 +66,7 @@ $iota-utils-display-var-display: $iota-global-utilities-namespace + $iota-utils-
         display: block !important;
       }
 
-      .#{$iota-utils-display-var-display + $iota-utils-display-hidden-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+      .#{$iota-utils-display-var-display + $iota-utils-display-none-name + $iota-global-breakpoint-separator + $breakpoint-name} {
         display: none !important;
       }
 
