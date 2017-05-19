@@ -130,8 +130,6 @@ img {
  */
 
 a {
-  text-decoration: none; /* 1 */
-  color: inherit; /* 2 */
   background-color: transparent; /* 3 */
   -webkit-text-decoration-skip: objects; /* 4 */
 }
