@@ -123,15 +123,13 @@ img {
 
 
 /**
- * 1. Removes text decoration from links.
- * 2. Sets default link color same as the content color.
- * 3. Removes default grey background in IE10.
- * 4. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ * 1. Removes default grey background in IE10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
 
 a {
-  background-color: transparent; /* 3 */
-  -webkit-text-decoration-skip: objects; /* 4 */
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
 }
 
 
@@ -165,16 +163,16 @@ a {
 
 
   /**
-   * 1. Add the correct box sizing in IE 10-.
-   * 2. Remove the padding in IE 10-.
+   * 1. Remove the padding in IE 10-.
+   * 2. Add the correct box sizing in IE 10-.
    */
 
   [type="checkbox"],
   [type="radio"] {
-    padding: 0; /* 2 */
+    padding: 0; /* 1 */
 
     @if ($iota-base-initialize-box-sizing != 'border-box') {
-      box-sizing: border-box /* 1 */;
+      box-sizing: border-box /* 2 */;
     }
   }
 
