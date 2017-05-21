@@ -15,7 +15,7 @@ npm install --save iotacss-utils-display
 ```sass
 $iota-utils-display-namespace             : '' !default;
 $iota-utils-display-block-name            : 'block' !default;
-$iota-utils-display-none-name             : 'none' !default;
+$iota-utils-display-hidden-name           : 'hidden' !default;
 $iota-utils-display-inline-name           : 'inline' !default;
 $iota-utils-display-inline-block-name     : 'inline-block' !default;
 
