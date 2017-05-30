@@ -41,13 +41,13 @@ $iota-tools-ms-scale  : 3 !default;
   
   @if $increment > 0 {
     @for $i from 1 through $increment {
-      $base: $base * $iota-tools-ms-ratio;
+      $base: $base * $ratio;
     }
   }
   
   @if $increment < 0 {
     @for $i from -1 through $increment {
-      $base: $base / $iota-tools-ms-ratio;
+      $base: $base / $ratio;
     }
   }
 
