@@ -1,6 +1,6 @@
 {
   "name": "iotacss-utils-pull",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Pull utility for iotaCSS",
   "main": "_utilities.pull.scss",
   "repository": "https://github.com/iotacss/iotacss/tree/master/modules/iotacss-utils-pull",

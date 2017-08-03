@@ -1,6 +1,6 @@
 {
   "name": "iotacss-utils-push",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Push utility for iotaCSS",
   "main": "_utilities.push.scss",
   "repository": "https://github.com/iotacss/iotacss/tree/master/modules/iotacss-utils-push",
