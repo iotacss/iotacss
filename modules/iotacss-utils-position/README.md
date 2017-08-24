@@ -18,6 +18,7 @@ $iota-utils-position-absolute-name        : 'absolute' !default;
 $iota-utils-position-fixed-name           : 'fixed' !default;
 $iota-utils-position-relative-name        : 'relative' !default;
 $iota-utils-position-static-name          : 'static' !default;
+$iota-utils-position-sticky-name          : 'sticky' !default;
 
 $iota-utils-position-res                  : false !default;
 $iota-utils-position-breakpoints          : $iota-global-breakpoints !default;
@@ -31,6 +32,7 @@ $iota-utils-position-breakpoints          : $iota-global-breakpoints !default;
 .u-fixed
 .u-relative
 .u-static
+.u-sticky
 
 
 // Responsive Class Syntax
