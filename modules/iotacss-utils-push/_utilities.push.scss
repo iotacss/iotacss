@@ -72,13 +72,12 @@ $iota-utils-push-var-push: $iota-global-utilities-namespace + $iota-utils-push-n
 
       }
 
-    }
+      // Push Reset Class
 
+      .#{$iota-utils-push-var-push + $iota-utils-push-zero-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        @include _iota-directional-property('margin', 'left', 0, true);
+      }
 
-    // Push Reset Class
-
-    .#{$iota-utils-push-var-push + $iota-utils-push-zero-name + $iota-global-breakpoint-separator + $breakpoint-name} {
-      @include _iota-directional-property('margin', 'left', 0, true);
     }
 
   }
