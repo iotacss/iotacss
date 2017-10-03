@@ -1,0 +1,86 @@
+//  Justify Content Utility
+
+
+
+// Options
+
+$iota-utils-justifycontent                      : true;
+
+$iota-utils-justifycontent-namespace            : 'jc' !default;
+$iota-utils-justifycontent-flexstart-name       : 'flexstart' !default;
+$iota-utils-justifycontent-flexend-name         : 'flexend' !default;
+$iota-utils-justifycontent-center-name          : 'center' !default;
+$iota-utils-justifycontent-spacebetween-name    : 'spacebetween' !default;
+$iota-utils-justifycontent-spacearound-name     : 'spacearound' !default;
+
+$iota-utils-justifycontent-res                  : false !default;
+$iota-utils-justifycontent-breakpoints          : $iota-global-breakpoints !default;
+
+
+
+
+// Helper Local Variables
+
+$iota-utils-justifycontent-var-justifycontent: $iota-global-utilities-namespace + $iota-utils-justifycontent-namespace;
+
+
+
+
+// Justify Content Utilities
+
+.#{$iota-utils-justifycontent-var-justifycontent + $iota-utils-justifycontent-flexstart-name} {
+  justify-content: flex-start !important;
+}
+
+.#{$iota-utils-justifycontent-var-justifycontent + $iota-utils-justifycontent-flexend-name} {
+  justify-content: flex-end !important;
+}
+
+.#{$iota-utils-justifycontent-var-justifycontent + $iota-utils-justifycontent-center-name} {
+  justify-content: center !important;
+}
+
+.#{$iota-utils-justifycontent-var-justifycontent + $iota-utils-justifycontent-spacebetween-name} {
+  justify-content: space-between !important;
+}
+
+.#{$iota-utils-justifycontent-var-justifycontent + $iota-utils-justifycontent-spacearound-name} {
+  justify-content: space-around !important;
+}
+
+
+
+
+// Justify Content Responsive Utilities
+
+@if $iota-utils-justifycontent-res {
+
+  @each $breakpoint-name, $breakpoint-size in $iota-utils-justifycontent-breakpoints {
+
+    @media #{$breakpoint-size} {
+
+      .#{$iota-utils-justifycontent-var-justifycontent + $iota-utils-justifycontent-flexstart-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        justify-content: flex-start !important;
+      }
+
+      .#{$iota-utils-justifycontent-var-justifycontent + $iota-utils-justifycontent-flexend-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        justify-content: flex-end !important;
+      }
+
+      .#{$iota-utils-justifycontent-var-justifycontent + $iota-utils-justifycontent-center-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        justify-content: center !important;
+      }
+
+      .#{$iota-utils-justifycontent-var-justifycontent + $iota-utils-justifycontent-spacebetween-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        justify-content: space-between !important;
+      }
+      
+      .#{$iota-utils-justifycontent-var-justifycontent + $iota-utils-justifycontent-spacearound-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        justify-content: space-around !important;
+      }
+
+    }
+
+  }
+
+}
