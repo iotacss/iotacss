@@ -1,0 +1,16 @@
+{
+  "name": "iotacss-utils-justifycontent",
+  "version": "1.0.1",
+  "description": "Justify Content utility for iotaCSS",
+  "main": "_utilities.justifycontent.scss",
+  "repository": "https://github.com/iotacss/iotacss/tree/master/modules/iotacss-utils-justifycontent",
+  "license": "Apache-2.0",
+  "keywords": [
+    "iotacss",
+    "css",
+    "sass",
+    "bem",
+    "oocss"
+  ],
+  "author": "Dimitris Psaropoulos <info@harby.me>"
+}
