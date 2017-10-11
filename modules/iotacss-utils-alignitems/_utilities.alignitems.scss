@@ -1,0 +1,86 @@
+//  Align Items Utility
+
+
+
+
+// Options
+
+$iota-utils-ai                      : true;
+
+$iota-utils-ai-namespace            : 'ai' !default;
+$iota-utils-ai-start-name           : 'flex-start' !default;
+$iota-utils-ai-end-name             : 'flex-end' !default;
+$iota-utils-ai-center-name          : 'center' !default;
+$iota-utils-ai-stretch-name         : 'stretch' !default;
+$iota-utils-ai-baseline-name        : 'baseline' !default;
+
+$iota-utils-ai-res                  : false !default;
+$iota-utils-ai-breakpoints          : $iota-global-breakpoints !default;
+
+
+
+
+// Helper Local Variables
+
+$iota-utils-ai-var-align-items: $iota-global-utilities-namespace + $iota-utils-ai-namespace;
+
+
+
+// Align Items Utilities
+
+.#{$iota-utils-ai-var-ai + $iota-utils-ai-start-name} {
+  align-items: flex-start !important;
+}
+
+.#{$iota-utils-ai-var-ai + $iota-utils-ai-end-name} {
+  align-items: flex-end !important;
+}
+
+.#{$iota-utils-ai-var-ai + $iota-utils-ai-center-name} {
+  align-items: center !important;
+}
+
+.#{$iota-utils-ai-var-ai + $iota-utils-ai-stretch-name} {
+  align-items: stretch !important;
+}
+
+.#{$iota-utils-ai-var-ai + $iota-utils-ai-baseline-name} {
+  align-items: baseline !important;
+}
+
+
+
+
+// Align Items Responsive Utilities
+
+@if $iota-utils-ai-res {
+
+  @each $breakpoint-name, $breakpoint-size in $iota-utils-ai-breakpoints {
+
+    @media #{$breakpoint-size} {
+
+      .#{$iota-utils-ai-var-ai + $iota-utils-ai-start-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        align-items: flex-start !important;
+      }
+
+      .#{$iota-utils-ai-var-ai + $iota-utils-ai-end-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        align-items: flex-end !important;
+      }
+
+      .#{$iota-utils-ai-var-ai + $iota-utils-ai-center-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        align-items: center !important;
+      }
+
+      .#{$iota-utils-ai-var-ai + $iota-utils-ai-stretch-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        align-items: stretch !important;
+      }
+      
+      .#{$iota-utils-ai-var-ai + $iota-utils-ai-baseline-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        align-items: baseline !important;
+      }
+
+    }
+
+  }
+
+}
