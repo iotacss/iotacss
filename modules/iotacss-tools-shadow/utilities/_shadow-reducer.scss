@@ -1,0 +1,15 @@
+@function shadow-reducer($source-map, $key-list){
+  @if $key-list == null {
+    @return $source-map;
+  } @else {
+    @if length($key-list) == 0 {
+      @return ();
+    } @else {
+      @if valid-list($key-list) == true {
+        $unused-keys: get-unused-keys($source-map, $key-list);
+        @return reduce-map($source-map, $unused-keys);
+      } @else {
+        @return ();
+      }};
+    }
+};
