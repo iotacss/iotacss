@@ -1,0 +1,16 @@
+{
+  "name": "iotacss-utils-align-items",
+  "version": "1.0.1",
+  "description": "Position utility for iotaCSS",
+  "main": "_utilities.align-items.scss",
+  "repository": "https://github.com/iotacss/iotacss/tree/master/modules/iotacss-utils-align-items",
+  "license": "Apache-2.0",
+  "keywords": [
+    "iotacss",
+    "css",
+    "sass",
+    "bem",
+    "oocss"
+  ],
+  "author": "Dimitris Psaropoulos <info@harby.me>"
+}
