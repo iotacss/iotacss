@@ -6,7 +6,7 @@ The justify content utility contains helper classes for the CSS justify-content 
 ### Installation ###
 
 ```
-npm install --save iotacss-utils-justifycontent
+npm install --save iotacss-utils-justify-content
 ```
 
 

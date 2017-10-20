@@ -1,6 +1,6 @@
 {
   "name": "iotacss-utils-justify-content",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Justify Content utility for iotaCSS",
   "main": "_utilities.justify-content.scss",
   "repository": "https://github.com/iotacss/iotacss/tree/master/modules/iotacss-utils-justify-content",
