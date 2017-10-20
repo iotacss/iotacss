@@ -7,9 +7,9 @@
 
 $iota-utils-align-items                      : true;
 
-$iota-utils-align-items-namespace            : 'ai' !default;
-$iota-utils-align-items-start-name           : 'flex-start' !default;
-$iota-utils-align-items-end-name             : 'flex-end' !default;
+$iota-utils-align-items-namespace            : 'ai-' !default;
+$iota-utils-align-items-start-name           : 'start' !default;
+$iota-utils-align-items-end-name             : 'end' !default;
 $iota-utils-align-items-center-name          : 'center' !default;
 $iota-utils-align-items-stretch-name         : 'stretch' !default;
 $iota-utils-align-items-baseline-name        : 'baseline' !default;
@@ -84,3 +84,4 @@ $iota-utils-align-items-var-ai: $iota-global-utilities-namespace + $iota-utils-a
   }
 
 }
+
