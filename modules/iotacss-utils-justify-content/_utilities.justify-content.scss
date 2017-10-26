@@ -1,0 +1,86 @@
+//  Justify Content Utility
+
+
+
+// Options
+
+$iota-utils-justify-content               : true;
+
+$iota-utils-justify-content-namespace     : 'jc-' !default;
+$iota-utils-justify-content-start-name    : 'start' !default;
+$iota-utils-justify-content-end-name      : 'end' !default;
+$iota-utils-justify-content-center-name   : 'center' !default;
+$iota-utils-justify-content-between-name  : 'between' !default;
+$iota-utils-justify-content-around-name   : 'around' !default;
+
+$iota-utils-justify-content-res           : false !default;
+$iota-utils-justify-content-breakpoints   : $iota-global-breakpoints !default;
+
+
+
+
+// Helper Local Variables
+
+$iota-utils-justify-content-var-jc: $iota-global-utilities-namespace + $iota-utils-justify-content-namespace;
+
+
+
+
+// Justify Content Utilities
+
+.#{$iota-utils-justify-content-var-jc + $iota-utils-justify-content-start-name} {
+  justify-content: flex-start !important;
+}
+
+.#{$iota-utils-justify-content-var-jc + $iota-utils-justify-content-end-name} {
+  justify-content: flex-end !important;
+}
+
+.#{$iota-utils-justify-content-var-jc + $iota-utils-justify-content-center-name} {
+  justify-content: center !important;
+}
+
+.#{$iota-utils-justify-content-var-jc + $iota-utils-justify-content-between-name} {
+  justify-content: space-between !important;
+}
+
+.#{$iota-utils-justify-content-var-jc + $iota-utils-justify-content-around-name} {
+  justify-content: space-around !important;
+}
+
+
+
+
+// Justify Content Responsive Utilities
+
+@if $iota-utils-justify-content-res {
+
+  @each $breakpoint-name, $breakpoint-size in $iota-utils-justify-content-breakpoints {
+
+    @media #{$breakpoint-size} {
+
+      .#{$iota-utils-justify-content-var-jc + $iota-utils-justify-content-start-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        justify-content: flex-start !important;
+      }
+
+      .#{$iota-utils-justify-content-var-jc + $iota-utils-justify-content-end-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        justify-content: flex-end !important;
+      }
+
+      .#{$iota-utils-justify-content-var-jc + $iota-utils-justify-content-center-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        justify-content: center !important;
+      }
+
+      .#{$iota-utils-justify-content-var-jc + $iota-utils-justify-content-between-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        justify-content: space-between !important;
+      }
+      
+      .#{$iota-utils-justify-content-var-jc + $iota-utils-justify-content-around-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        justify-content: space-around !important;
+      }
+
+    }
+
+  }
+
+}
