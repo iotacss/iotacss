@@ -20,26 +20,26 @@ $iota-utils-flex-direction-breakpoints            : $iota-global-breakpoints !de
 
 // Helper Local Variables
 
-$iota-utils-flex-direction-var-jc: $iota-global-utilities-namespace + $iota-utils-flex-direction-namespace;
+$iota-utils-flex-direction-var-fd: $iota-global-utilities-namespace + $iota-utils-flex-direction-namespace;
 
 
 
 
 // Flex Direction Utilities
 
-.#{$iota-utils-flex-direction-var-jc + $iota-utils-flex-direction-row-name} {
+.#{$iota-utils-flex-direction-var-fd + $iota-utils-flex-direction-row-name} {
   flex-direction: row !important;
 }
 
-.#{$iota-utils-flex-direction-var-jc + $iota-utils-flex-direction-row-reverse-name} {
+.#{$iota-utils-flex-direction-var-fd + $iota-utils-flex-direction-row-reverse-name} {
   flex-direction: row-reverse !important;
 }
 
-.#{$iota-utils-flex-direction-var-jc + $iota-utils-flex-direction-column-name} {
+.#{$iota-utils-flex-direction-var-fd + $iota-utils-flex-direction-column-name} {
   flex-direction: column !important;
 }
 
-.#{$iota-utils-flex-direction-var-jc + $iota-utils-flex-direction-column-reverse-name} {
+.#{$iota-utils-flex-direction-var-fd + $iota-utils-flex-direction-column-reverse-name} {
   flex-direction: column-reverse !important;
 }
 
@@ -54,19 +54,19 @@ $iota-utils-flex-direction-var-jc: $iota-global-utilities-namespace + $iota-util
 
     @media #{$breakpoint-size} {
 
-      .#{$iota-utils-flex-direction-var-jc + $iota-utils-flex-direction-row-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+      .#{$iota-utils-flex-direction-var-fd + $iota-utils-flex-direction-row-name + $iota-global-breakpoint-separator + $breakpoint-name} {
         flex-direction: row !important;
       }
 
-      .#{$iota-utils-flex-direction-var-jc + $iota-utils-flex-direction-row-reverse-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+      .#{$iota-utils-flex-direction-var-fd + $iota-utils-flex-direction-row-reverse-name + $iota-global-breakpoint-separator + $breakpoint-name} {
         flex-direction: row-reverse !important;
       }
 
-      .#{$iota-utils-flex-direction-var-jc + $iota-utils-flex-direction-column-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+      .#{$iota-utils-flex-direction-var-fd + $iota-utils-flex-direction-column-name + $iota-global-breakpoint-separator + $breakpoint-name} {
         flex-direction: column !important;
       }
 
-      .#{$iota-utils-flex-direction-var-jc + $iota-utils-flex-direction-column-reverse-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+      .#{$iota-utils-flex-direction-var-fd + $iota-utils-flex-direction-column-reverse-name + $iota-global-breakpoint-separator + $breakpoint-name} {
         flex-direction: column-reverse !important;
       }
 
