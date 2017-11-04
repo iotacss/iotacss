@@ -1,0 +1,77 @@
+//  Flex Direction Utility
+
+
+
+// Options
+
+$iota-utils-flex-direction                        : true;
+
+$iota-utils-flex-direction-namespace              : 'fd-' !default;
+$iota-utils-flex-direction-row-name               : 'row' !default;
+$iota-utils-flex-direction-row-reverse-name       : 'rowrev' !default;
+$iota-utils-flex-direction-column-name            : 'col' !default;
+$iota-utils-flex-direction-column-reverse-name    : 'colrev' !default;
+
+$iota-utils-flex-direction-res                    : false !default;
+$iota-utils-flex-direction-breakpoints            : $iota-global-breakpoints !default;
+
+
+
+
+// Helper Local Variables
+
+$iota-utils-flex-direction-var-fd: $iota-global-utilities-namespace + $iota-utils-flex-direction-namespace;
+
+
+
+
+// Flex Direction Utilities
+
+.#{$iota-utils-flex-direction-var-fd + $iota-utils-flex-direction-row-name} {
+  flex-direction: row !important;
+}
+
+.#{$iota-utils-flex-direction-var-fd + $iota-utils-flex-direction-row-reverse-name} {
+  flex-direction: row-reverse !important;
+}
+
+.#{$iota-utils-flex-direction-var-fd + $iota-utils-flex-direction-column-name} {
+  flex-direction: column !important;
+}
+
+.#{$iota-utils-flex-direction-var-fd + $iota-utils-flex-direction-column-reverse-name} {
+  flex-direction: column-reverse !important;
+}
+
+
+
+
+// Flex Direction Responsive Utilities
+
+@if $iota-utils-flex-direction-res {
+
+  @each $breakpoint-name, $breakpoint-size in $iota-utils-flex-direction-breakpoints {
+
+    @media #{$breakpoint-size} {
+
+      .#{$iota-utils-flex-direction-var-fd + $iota-utils-flex-direction-row-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        flex-direction: row !important;
+      }
+
+      .#{$iota-utils-flex-direction-var-fd + $iota-utils-flex-direction-row-reverse-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        flex-direction: row-reverse !important;
+      }
+
+      .#{$iota-utils-flex-direction-var-fd + $iota-utils-flex-direction-column-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        flex-direction: column !important;
+      }
+
+      .#{$iota-utils-flex-direction-var-fd + $iota-utils-flex-direction-column-reverse-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        flex-direction: column-reverse !important;
+      }
+
+    }
+
+  }
+
+}

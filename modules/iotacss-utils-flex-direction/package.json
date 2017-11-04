@@ -1,0 +1,16 @@
+{
+  "name": "iotacss-utils-flex-direction",
+  "version": "1.0.0",
+  "description": "Flex Direction utility for iotaCSS",
+  "main": "_utilities.flex-direction.scss",
+  "repository": "https://github.com/iotacss/iotacss/tree/master/modules/iotacss-utils-flex-direction",
+  "license": "Apache-2.0",
+  "keywords": [
+    "iotacss",
+    "css",
+    "sass",
+    "bem",
+    "oocss"
+  ],
+  "author": "Russell Bishop <hey@russellbishop.co.uk>"
+}
