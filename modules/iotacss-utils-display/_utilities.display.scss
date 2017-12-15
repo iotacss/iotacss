@@ -11,6 +11,7 @@ $iota-utils-display-block-name            : 'block' !default;
 $iota-utils-display-hidden-name           : 'hidden' !default;
 $iota-utils-display-inline-name           : 'inline' !default;
 $iota-utils-display-inline-block-name     : 'inline-block' !default;
+$iota-utils-display-visually-hidden-name  : 'visually-hidden' !default;
 
 $iota-utils-display-res                   : false !default;
 $iota-utils-display-breakpoints           : $iota-global-breakpoints !default;
@@ -47,6 +48,15 @@ $iota-utils-display-var-display: $iota-global-utilities-namespace + $iota-utils-
   display: inline-block !important;
 }
 
+.#{$iota-utils-display-var-display + $iota-utils-display-visually-hidden-name} {
+  clip: rect(1px 1px 1px 1px) !important; /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  width: 1px !important; 
+}
+
 
 
 
@@ -76,6 +86,15 @@ $iota-utils-display-var-display: $iota-global-utilities-namespace + $iota-utils-
 
       .#{$iota-utils-display-var-display + $iota-utils-display-inline-block-name + $iota-global-breakpoint-separator + $breakpoint-name} {
         display: inline-block !important;
+      }
+      
+      .#{$iota-utils-display-var-display + $iota-utils-display-visually-hidden-block-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        clip: rect(1px 1px 1px 1px) !important; /* IE6, IE7 */
+        clip: rect(1px, 1px, 1px, 1px) !important;
+        height: 1px !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        width: 1px !important; 
       }
 
     }
