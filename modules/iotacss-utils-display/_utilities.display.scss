@@ -88,7 +88,7 @@ $iota-utils-display-var-display: $iota-global-utilities-namespace + $iota-utils-
         display: inline-block !important;
       }
       
-      .#{$iota-utils-display-var-display + $iota-utils-display-visually-hidden-block-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+      .#{$iota-utils-display-var-display + $iota-utils-display-visually-hidden-name + $iota-global-breakpoint-separator + $breakpoint-name} {
         clip: rect(1px 1px 1px 1px) !important; /* IE6, IE7 */
         clip: rect(1px, 1px, 1px, 1px) !important;
         height: 1px !important;
