@@ -105,6 +105,7 @@ $iota-objs-media-var-media-fluid : $iota-objs-media-var-media + "__" + $iota-obj
     & > .#{$iota-objs-media-var-media-fixed},
     & > .#{$iota-objs-media-var-media-fluid} {
       display: table-cell;
+      vertical-align: top;
     }
 
     & > .#{$iota-objs-media-var-media-fixed} {
