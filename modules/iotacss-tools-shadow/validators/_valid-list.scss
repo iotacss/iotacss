@@ -1,0 +1,7 @@
+@function valid-list($list) {
+  @if length($list) > 0 {
+    @return true;
+  } @else {
+    @return false;
+  }
+}

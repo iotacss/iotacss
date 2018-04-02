@@ -1,0 +1,16 @@
+{
+  "name": "iotacss-tools-shadow",
+  "version": "1.0.0",
+  "description": "ShadowDom tools for iotaCSS",
+  "main": "_tools.shadow.scss",
+  "repository": "https://github.com/iotacss/iotacss/tree/master/modules/iotacss-tools-shadow",
+  "license": "Apache-2.0",
+  "keywords": [
+    "iotacss",
+    "css",
+    "sass",
+    "bem",
+    "oocss"
+  ],
+  "author": "Marco Siedentopf <siedentm@me.com>"
+}

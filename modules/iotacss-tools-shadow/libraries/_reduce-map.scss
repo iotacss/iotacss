@@ -1,0 +1,12 @@
+@function reduce-map($source-map, $unused-keys){
+  $reduced-map: $source-map;
+  @if length($unused-keys) == 0 {
+    @return $source-map;
+  } @else {
+    @for $i from 1 through length($unused-keys) {
+      $reduced-map: map-remove($reduced-map, nth($unused-keys, $i))
+    }
+
+    @return $reduced-map
+  }
+}

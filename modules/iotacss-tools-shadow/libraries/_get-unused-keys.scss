@@ -1,0 +1,9 @@
+@function get-unused-keys($map, $list){
+  @for $i from 1 through length($list) {
+    @if map-has-key($map, nth($list, $i)) {
+      $temp: $map;
+      $map: map-remove($temp, nth($list, $i));
+    }
+  }
+  @return map-keys($map)
+}
