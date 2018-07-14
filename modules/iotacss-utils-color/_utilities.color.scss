@@ -11,6 +11,8 @@ $iota-utils-color-namespace : 'color-' !default;
 
 $iota-utils-color-names     : () !default;
 
+$iota-utils-color-res       : false !default;
+
 
 
 
@@ -29,4 +31,16 @@ $iota-utils-color-var-color: $iota-global-utilities-namespace + $iota-utils-colo
     color: #{$color-value} !important;
   }
 
+}
+
+@if $iota-utils-color-res {
+  @each $color-name, $color-value in $iota-utils-color-names {
+    @each $breakpoint-name, $breakpoint-value in $iota-global-breakpoints {
+      .#{$iota-utils-color-var-color + $color-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        @include iota-breakpoint($breakpoint-name) {
+          color: $color-value !important;
+        }
+      }
+    }
+  }
 }
