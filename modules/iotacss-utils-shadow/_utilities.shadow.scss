@@ -1,0 +1,25 @@
+// Box Shadow Utility
+
+// Options
+
+$iota-utils-shadow: true;
+
+$iota-utils-shadow-namespace: 'shadow-' !default;
+
+$iota-utils-shadow-names: (
+    1: 0px 2px 10px rgba(0, 0, 0, 0.1),
+    2: 0px 4px 20px rgba(0, 0, 0, 0.15)
+) !default;
+
+// Helper Local Variables
+
+$iota-utils-shadow-var: $iota-global-utilities-namespace +
+    $iota-utils-shadow-namespace;
+
+// Box Shadow Utilities
+
+@each $shadow-name, $shadow-value in $iota-utils-shadow-names {
+    .#{$iota-utils-shadow-var + $shadow-name} {
+        box-shadow: #{$shadow-value} !important;
+    }
+}
