@@ -1,0 +1,22 @@
+// Fill Utility
+
+// Options
+
+$iota-utils-fill: true;
+
+$iota-utils-fill-namespace: 'fill-' !default;
+
+$iota-utils-fill-names: () !default;
+
+// Helper Local Variables
+
+$iota-utils-fill-var: $iota-global-utilities-namespace +
+    $iota-utils-fill-namespace;
+
+// Fill Utilities
+
+@each $fill-name, $fill-value in $iota-utils-fill-names {
+    .#{$iota-utils-fill-var + $fill-name} {
+        background-color: #{$fill-value} !important;
+    }
+}
