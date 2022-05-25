@@ -1,4 +1,5 @@
 // Pull Utility
+@use "sass:math";
 
 
 
@@ -31,7 +32,7 @@ $iota-utils-pull-var-pull: $iota-global-utilities-namespace + $iota-utils-pull-n
 @each $column-size in $iota-utils-pull-columns {
 
   @for $i from 1 through ($column-size - 1) {
-    $margin-size: ((100 / $column-size) * $i) * 1%;
+    $margin-size: (math.div(100, $column-size) * $i) * 1%;
 
     .#{$iota-utils-pull-var-pull + $i + $iota-utils-pull-delimiter + $column-size} {
       @include _iota-directional-property('margin', 'right', $margin-size, true);
@@ -62,7 +63,7 @@ $iota-utils-pull-var-pull: $iota-global-utilities-namespace + $iota-utils-pull-n
       @each $column-size in $iota-utils-pull-columns {
 
         @for $i from 1 through ($column-size - 1) {
-          $margin-size: ((100 / $column-size) * $i) * 1%;
+          $margin-size: (math.div(100, $column-size) * $i) * 1%;
 
           .#{$iota-utils-pull-var-pull + $i + $iota-utils-pull-delimiter + $column-size + $iota-global-breakpoint-separator + $breakpoint-name} {
             @include _iota-directional-property('margin', 'right', $margin-size, true);
