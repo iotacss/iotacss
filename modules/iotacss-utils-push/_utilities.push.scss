@@ -1,4 +1,5 @@
 // Push Utility
+@use "sass:math";
 
 
 
@@ -31,7 +32,7 @@ $iota-utils-push-var-push: $iota-global-utilities-namespace + $iota-utils-push-n
 @each $column-size in $iota-utils-push-columns {
 
   @for $i from 1 through ($column-size - 1) {
-    $margin-size: ((100 / $column-size) * $i) * 1%;
+    $margin-size: (math.div(100, $column-size) * $i) * 1%;
 
     .#{$iota-utils-push-var-push + $i + $iota-utils-push-delimiter + $column-size} {
       @include _iota-directional-property('margin', 'left', $margin-size, true);
@@ -62,7 +63,7 @@ $iota-utils-push-var-push: $iota-global-utilities-namespace + $iota-utils-push-n
       @each $column-size in $iota-utils-push-columns {
 
         @for $i from 1 through ($column-size - 1) {
-          $margin-size: ((100 / $column-size) * $i) * 1%;
+          $margin-size: (math.div(100, $column-size) * $i) * 1%;
 
           .#{$iota-utils-push-var-push + $i + $iota-utils-push-delimiter + $column-size + $iota-global-breakpoint-separator + $breakpoint-name} {
             @include _iota-directional-property('margin', 'left', $margin-size, true);
